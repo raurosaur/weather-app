@@ -1,1 +1,161 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #3A30B5;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.search {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  margin: 30px;
+  width: 400px;
+  height: 50px;
+  background-color: black;
+  border-radius: 50px;
+  z-index: 1001;
+}
+
+.waves {
+  position: fixed;
+  background-image: url("waves.svg");
+  background-repeat: repeat;
+  background-size: 100% 200%;
+  bottom: -5px;
+  height: 40vh;
+  width: 100vw;
+  animation: wwaves 30s linear infinite;
+  animation-direction: normal;
+  z-index: 999;
+}
+
+@keyframes waves {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -100vw;
+  }
+}
+
+.yellow {
+  filter: hue-rotate(195deg);
+}
+
+.green {
+  filter: hue-rotate(-90deg);
+}
+
+.general {
+  height: 100vh;
+  width: 100vw;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.sunny {
+  background-color: skyblue;
+}
+
+.container {
+  position: fixed;
+  width: 100%;
+  height: 40%;
+  z-index: 100;
+}
+
+.cloudy {
+  background-color: cadetblue;
+}
+
+.cloudy img {
+  position: fixed;
+  z-index: 11;
+  height: 200px;
+}
+
+.cloudy .container {
+  background: url("clouds.svg");
+  background-size: cover;
+  animation: clouds 30s linear infinite;
+}
+
+@keyframes clouds {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 100vw;
+  }
+}
+
+.raining {
+  background-color: #0071BC;
+}
+
+.raining img {
+  position: fixed;
+  top: -40px;
+  left: -120px;
+  z-index: 11;
+  height: 200px;
+}
+
+.raining .container {
+  height: 100vh;
+  z-index: 10;
+  background: url("rain.svg");
+  background-size: contain;
+  animation: rain 20s linear infinite;
+}
+
+@keyframes rain {
+  0% {
+    background-position-x: 0;
+    background-position-y: 0;
+  }
+  100% {
+    background-position-x: 100vw;
+    background-position-y: 100vh;
+  }
+}
+
+.snowy {
+  background-color: #4db592;
+}
+
+.snowy .container {
+  height: 100vh;
+  background: url("snow.svg");
+  animation: snow 30s linear infinite;
+  z-index: 1000;
+}
+
+@keyframes snow {
+  0% {
+    background-position-y: 0px;
+  }
+  100% {
+    background-position-y: 100vh;
+  }
+}
+
+.info {
+  position: fixed;
+  background-color: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  z-index: 1000;
+  border-radius: 30px;
+}
+/*# sourceMappingURL=style.css.map */
