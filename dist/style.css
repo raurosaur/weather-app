@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -16,9 +17,13 @@ body {
   margin: 30px;
   width: 400px;
   height: 50px;
-  background-color: black;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   border-radius: 50px;
   z-index: 1001;
+}
+
+.search:hover {
+  transform: scale(1.1);
 }
 
 .waves {
@@ -29,9 +34,10 @@ body {
   bottom: -5px;
   height: 40vh;
   width: 100vw;
-  animation: wwaves 30s linear infinite;
+  animation: waves 30s linear infinite;
   animation-direction: normal;
   z-index: 999;
+  transition: filter 500ms ease-in;
 }
 
 @keyframes waves {
@@ -51,28 +57,44 @@ body {
   filter: hue-rotate(-90deg);
 }
 
-.general {
+.scenes {
   height: 100vh;
   width: 100vw;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
 }
 
-.display-none {
-  display: none !important;
+.show {
+  opacity: 1 !important;
 }
 
 .sunny {
   background-color: skyblue;
+  transition: opacity 1000ms ease-in,  background-color 200ms ease-in 1000ms;
+}
+
+.sunny img {
+  position: relative;
+  bottom: 0px;
+  transition: transform 5000ms ease-in 1000ms;
+}
+
+.sunny .move {
+  transform: translateY(-200px);
 }
 
 .container {
   position: fixed;
   width: 100%;
-  height: 40%;
+  height: 500px;
   z-index: 100;
 }
 
 .cloudy {
   background-color: cadetblue;
+  transition: opacity 1000ms ease-in,  background-color 200ms ease-in 1000ms;
 }
 
 .cloudy img {
@@ -98,6 +120,7 @@ body {
 
 .raining {
   background-color: #0071BC;
+  transition: opacity 1000ms ease-in,  background-color 200ms ease-in 1000ms;
 }
 
 .raining img {
@@ -129,6 +152,7 @@ body {
 
 .snowy {
   background-color: #4db592;
+  transition: opacity 1000ms ease-in,  background-color 200ms ease-in 1000ms;
 }
 
 .snowy .container {
@@ -149,13 +173,64 @@ body {
 
 .info {
   position: fixed;
-  background-color: black;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   z-index: 1000;
   border-radius: 30px;
+  font-family: 'Roboto', serif;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.info div {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.info .city {
+  grid-area: 1/1/2/5;
+  font-size: 5rem;
+}
+
+.info .status {
+  grid-area: 2/1/3/4;
+  font-size: 2.5rem;
+}
+
+.info .temp {
+  grid-area: 2/4/3/5;
+  font-size: 1.5rem;
+}
+
+.info .max {
+  grid-area: 3/1/4/2;
+}
+
+.info .min {
+  grid-area: 3/3/4/4;
+}
+
+.info .visibility {
+  grid-area: 3/4/4/5;
+}
+
+.info .wind-speed {
+  grid-area: 4/1/5/3;
+}
+
+.info .wind-direction {
+  grid-area: 4/3/5/5;
+}
+
+.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /*# sourceMappingURL=style.css.map */

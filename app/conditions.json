@@ -1,0 +1,8 @@
+{
+    "clear sky": "sunny",
+    "cloud": "cloudy",
+    "rain" : "rainy",
+    "thunderstorm": "thunderstorm",
+    "snow": "snowy",
+    "mist" : "misty"
+}
