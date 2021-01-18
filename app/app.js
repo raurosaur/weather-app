@@ -1,4 +1,4 @@
-const key = '2ca6d6f2a0aab4ee884df1bfc76751bb';
+const key = config.API_KEY;
 const grid = document.querySelectorAll('.info div');
 const scenes = document.querySelectorAll('.scenes');
 const convertC = temp => (temp - 273).toFixed(1) + '˚C';
@@ -6,6 +6,7 @@ const titleCase = str => str[0].toUpperCase() + str.substring(1);
 const waves = document.querySelector('.waves');
 const sun = document.querySelector('.sunny img');
 const info = document.querySelector('.info');
+const input = document.querySelector('.search').querySelector('input');
 
 //Hide/Show Class
 const hide = () => {
@@ -47,6 +48,11 @@ getScene = (id) => {
         return sunny;
     if(id >= 801 && id <= 805)
         return clouds;
+    else 
+        return () => {
+            hide();
+            waves.classList.remove('green');
+        };
 };
 
 //API and DOM Manipulation
@@ -83,7 +89,12 @@ function parse(response){
     for(let i = 0; i < details.length; i++)
         grid[i].innerText = details[i];
 }
+//getWeather('mumbai');
 
-
-getWeather('mumbai');
-info.onclick = snow;
+//Global Event
+window.addEventListener('keydown', (event) =>{
+    if(event.code === 'Enter'){
+        if(input.value)
+            getWeather(input.value);
+    }
+});
