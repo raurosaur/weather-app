@@ -22,8 +22,18 @@ body {
   z-index: 1001;
 }
 
-.search:hover {
-  transform: scale(1.1);
+.search input {
+  background: none;
+  border: none;
+  outline: none;
+  height: 80%;
+  width: 80%;
+  color: #FFF;
+  font-size: 20px;
+}
+
+.search:focus-within, .search:hover {
+  box-shadow: 0px 0px 10px 10px #ddd;
 }
 
 .waves {
@@ -226,6 +236,13 @@ body {
 
 .info .wind-direction {
   grid-area: 4/3/5/5;
+}
+
+.info .wind-direction a {
+  cursor: pointer;
+  display: inline-block;
+  color: #FFF;
+  text-decoration: none;
 }
 
 .text-center {

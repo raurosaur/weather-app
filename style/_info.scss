@@ -1,0 +1,60 @@
+$size : 500px;
+.info{
+    position: fixed;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $size;
+    height: $size;
+    z-index: 1000;
+    border-radius: 30px;
+    font-family: 'Roboto', serif;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    div{
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    .city{
+        grid-area: 1/1/2/5;
+        font-size: 5rem;
+    }
+    .status{
+        grid-area: 2/1/3/4;
+        font-size: 2.5rem;
+    }
+    .temp{
+        grid-area: 2/4/3/5;
+        font-size: 1.5rem;
+    }
+    .max{
+        grid-area: 3/1/4/2;
+    }
+    .min{
+        grid-area: 3/3/4/4;
+    }
+    .visibility{
+        grid-area: 3/4/4/5;
+    }
+    .wind-speed{
+        grid-area: 4/1/5/3;
+    }
+    .wind-direction{
+        grid-area: 4/3/5/5;
+        a{
+            cursor: pointer;
+            display: inline-block;
+            color: #FFF;
+            text-decoration: none;
+        }
+    }
+}
+
+.text-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

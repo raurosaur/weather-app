@@ -1,4 +1,4 @@
-const key = config.API_KEY;
+const key = "0c9194e83f1592864838e066367cf1ea";
 const grid = document.querySelectorAll('.info div');
 const scenes = document.querySelectorAll('.scenes');
 const convertC = temp => (temp - 273).toFixed(1) + '˚C';
